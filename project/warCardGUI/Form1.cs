@@ -51,11 +51,11 @@ namespace warCardGUI
 
         public static int checkWinner()
         {
-            if (play1Cards.Length == 0 && play2Cards.Length == cardsPack.Length)
+            if (play1Cards.Length == 1 && play2Cards.Length == cardsPack.Length-1)
             {
                 return 2;
             }
-            else if (play2Cards.Length == 0 && play1Cards.Length == cardsPack.Length)
+            else if (play2Cards.Length == 1 && play1Cards.Length == cardsPack.Length-1)
             {
                 return 1;
             }
@@ -179,8 +179,8 @@ namespace warCardGUI
             }
             else
             {
-                String cardWarPlayer1 = play1Cards[play1Cards.Length - nrCards - 1];
-                String cardWarPlayer2 = play2Cards[play2Cards.Length - nrCards - 1];
+                String cardWarPlayer1 = play1Cards[play1Cards.Length - nrCards];
+                String cardWarPlayer2 = play2Cards[play2Cards.Length - nrCards];
 
                 if(compareTwoCards(cardWarPlayer1, cardWarPlayer2) == 1)
                 {
@@ -248,8 +248,8 @@ namespace warCardGUI
 
             String path = AppDomain.CurrentDomain.BaseDirectory;
 
-            pictureBox1.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play1Cards[play1Cards.Length - 1] + ".png");
-            pictureBox2.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play2Cards[play2Cards.Length - 1] + ".png");
+            pictureBox1.Image = Image.FromFile(path + "../../images/" + play1Cards[play1Cards.Length - 1] + ".png");
+            pictureBox2.Image = Image.FromFile(path + "../../images/" + play2Cards[play2Cards.Length - 1] + ".png");
             label1.Text = path;
             label2.Text = "Carti ramane:" + play2Cards.Length.ToString();
 
@@ -275,9 +275,11 @@ namespace warCardGUI
                 winner = check;
             }
 
-            pictureBox1.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play1Cards[play1Cards.Length - 1] + ".png");
-            pictureBox2.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play2Cards[play2Cards.Length - 1] + ".png");
-          
+            String path = AppDomain.CurrentDomain.BaseDirectory;
+
+            pictureBox1.Image = Image.FromFile(path + "../../images/" + play1Cards[play1Cards.Length - 1] + ".png");
+            pictureBox2.Image = Image.FromFile(path + "../../images/" + play2Cards[play2Cards.Length - 1] + ".png");
+
             label1.Text = "Carti ramane:" + play1Cards.Length.ToString();
             label2.Text = "Carti ramane:" + play2Cards.Length.ToString();
 

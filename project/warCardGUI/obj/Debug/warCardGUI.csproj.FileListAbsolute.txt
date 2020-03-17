@@ -7,3 +7,12 @@ C:\Users\itdev6\Desktop\warCardGUI\obj\Debug\warCardGUI.Properties.Resources.res
 C:\Users\itdev6\Desktop\warCardGUI\obj\Debug\warCardGUI.csproj.GenerateResource.cache
 C:\Users\itdev6\Desktop\warCardGUI\obj\Debug\warCardGUI.exe
 C:\Users\itdev6\Desktop\warCardGUI\obj\Debug\warCardGUI.pdb
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\bin\Debug\warCardGUI.exe.config
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\bin\Debug\warCardGUI.exe
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\bin\Debug\warCardGUI.pdb
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\obj\Debug\warCardGUI.csprojAssemblyReference.cache
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\obj\Debug\warCardGUI.Form1.resources
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\obj\Debug\warCardGUI.Properties.Resources.resources
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\obj\Debug\warCardGUI.csproj.GenerateResource.cache
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\obj\Debug\warCardGUI.exe
+C:\Users\petri\Desktop\WarCardGame\project\warCardGUI\obj\Debug\warCardGUI.pdb
