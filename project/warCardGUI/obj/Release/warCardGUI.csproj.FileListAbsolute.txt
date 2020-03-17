@@ -1,0 +1,9 @@
+C:\Users\itdev6\Desktop\warCardGUI\bin\Release\warCardGUI.exe.config
+C:\Users\itdev6\Desktop\warCardGUI\bin\Release\warCardGUI.exe
+C:\Users\itdev6\Desktop\warCardGUI\bin\Release\warCardGUI.pdb
+C:\Users\itdev6\Desktop\warCardGUI\obj\Release\warCardGUI.csprojAssemblyReference.cache
+C:\Users\itdev6\Desktop\warCardGUI\obj\Release\warCardGUI.Form1.resources
+C:\Users\itdev6\Desktop\warCardGUI\obj\Release\warCardGUI.Properties.Resources.resources
+C:\Users\itdev6\Desktop\warCardGUI\obj\Release\warCardGUI.csproj.GenerateResource.cache
+C:\Users\itdev6\Desktop\warCardGUI\obj\Release\warCardGUI.exe
+C:\Users\itdev6\Desktop\warCardGUI\obj\Release\warCardGUI.pdb
