@@ -8,3 +8,5 @@
 
 - [ ] The necessary steps when the cards are equal
 - [ ] Player vs Player
+
+Link for images with cards: <a href="https://commons.wikimedia.org/wiki/Category:SVG_playing_cards"> Cards </a>
