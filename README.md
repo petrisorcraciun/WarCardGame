@@ -6,3 +6,5 @@
 
 <h6> TO DO: </h6> 
 
+- [ ] The necessary steps when the cards are equal
+- [ ] Player vs Player
