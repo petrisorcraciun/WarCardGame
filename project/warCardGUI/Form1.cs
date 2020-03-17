@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Threading;
 
 namespace warCardGUI
 {
@@ -89,6 +90,33 @@ namespace warCardGUI
             Randomizer.Randomize(play1Cards);
             Randomizer.Randomize(play2Cards);
         }
+
+        public static int compareTwoCards(String cardPlayer1, String cardPlayer2)
+        {
+            int positionCard1 = Array.IndexOf(cardsPack, cardPlayer1);
+            int positionCard2 = Array.IndexOf(cardsPack, cardPlayer2);
+
+            if (positionCard1 < positionCard2)
+            {
+                return 2;
+            }
+            return 1;
+           
+            
+        }
+
+        public static void addCardPlayer1(int positionCard, String cardPlayer2)
+        {
+            play2Cards = RemoveAt(play2Cards, positionCard);
+            play1Cards = AddAt(play1Cards, cardPlayer2);
+        }
+
+        public static void addCardPlayer2(int positionCard, String cardPlayer1)
+        {
+            
+            play1Cards = RemoveAt(play1Cards, positionCard);
+            play2Cards = AddAt(play2Cards, cardPlayer1);
+        }
         public static void ComparePlayerCards(String cardPlayer1, String cardPlayer2)
         {
             int positionCard1 = Array.IndexOf(cardsPack, cardPlayer1);
@@ -137,22 +165,42 @@ namespace warCardGUI
 
             if (nrCards == 1)
             {
-                if (positionCard1 < positionCard2)
+
+                if (compareTwoCards(cardPlayer1, cardPlayer2) == 2)
                 {
                     int positionCard = Array.IndexOf(play1Cards, cardPlayer1);
-                    play1Cards = RemoveAt(play1Cards, positionCard);
-                    play2Cards = AddAt(play2Cards, cardPlayer1);
+                    addCardPlayer2(positionCard, cardPlayer1);
                 }
-                else if (positionCard1 > positionCard2)
+                else
                 {
                     int positionCard = Array.IndexOf(play2Cards, cardPlayer2);
-                    play2Cards = RemoveAt(play2Cards, positionCard);
-                    play1Cards = AddAt(play1Cards, cardPlayer2);
+                    addCardPlayer1(positionCard, cardPlayer2);
                 }
             }
             else
             {
+                String cardWarPlayer1 = play1Cards[play1Cards.Length - nrCards - 1];
+                String cardWarPlayer2 = play2Cards[play2Cards.Length - nrCards - 1];
 
+                if(compareTwoCards(cardWarPlayer1, cardWarPlayer2) == 1)
+                {
+                    for(int i = 1;i <= nrCards; i++)
+                    {
+                        String card = play2Cards[play2Cards.Length - i];
+                        int positionCard = Array.IndexOf(play2Cards, card);
+                        addCardPlayer1(positionCard, card);
+                    }
+                } 
+                else
+                {
+                    for (int i = 1; i <= nrCards; i++)
+                    {
+                        String card = play1Cards[play1Cards.Length - i];
+                        int positionCard = Array.IndexOf(play1Cards, card);
+                        addCardPlayer2(positionCard, card);
+                    }
+                }
+                
             }
 
             Console.WriteLine(nrCards);
@@ -200,8 +248,8 @@ namespace warCardGUI
 
             String path = AppDomain.CurrentDomain.BaseDirectory;
 
-            pictureBox1.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE -- " + play1Cards[play1Cards.Length - 1] + ".png");
-            pictureBox2.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE -- " + play2Cards[play2Cards.Length - 1] + ".png");
+            pictureBox1.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play1Cards[play1Cards.Length - 1] + ".png");
+            pictureBox2.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play2Cards[play2Cards.Length - 1] + ".png");
             label1.Text = path;
             label2.Text = "Carti ramane:" + play2Cards.Length.ToString();
 
@@ -227,8 +275,8 @@ namespace warCardGUI
                 winner = check;
             }
 
-            pictureBox1.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE -- " + play1Cards[play1Cards.Length - 1] + ".png");
-            pictureBox2.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE -- " + play2Cards[play2Cards.Length - 1] + ".png");
+            pictureBox1.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play1Cards[play1Cards.Length - 1] + ".png");
+            pictureBox2.Image = Image.FromFile(@"-- ADD PATCH FOLDER IMAGE --" + play2Cards[play2Cards.Length - 1] + ".png");
           
             label1.Text = "Carti ramane:" + play1Cards.Length.ToString();
             label2.Text = "Carti ramane:" + play2Cards.Length.ToString();
