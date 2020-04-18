@@ -186,7 +186,7 @@ namespace warCardGUI
                 {
                     for(int i = 1;i <= nrCards; i++)
                     {
-                        String card = play2Cards[play2Cards.Length - i];
+                        String card = play2Cards[play2Cards.Length - 1];
                         int positionCard = Array.IndexOf(play2Cards, card);
                         addCardPlayer1(positionCard, card);
                     }
@@ -195,7 +195,7 @@ namespace warCardGUI
                 {
                     for (int i = 1; i <= nrCards; i++)
                     {
-                        String card = play1Cards[play1Cards.Length - i];
+                        String card = play1Cards[play1Cards.Length - 1];
                         int positionCard = Array.IndexOf(play1Cards, card);
                         addCardPlayer2(positionCard, card);
                     }
